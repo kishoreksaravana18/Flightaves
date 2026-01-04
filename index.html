@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroVis | Global Flight Traffic</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Globe.gl -->
+    <script src="https://unpkg.com/globe.gl"></script>
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+
+<body>
+    <div id="globeViz"></div>
+
+    <div class="ui-overlay">
+        <header class="app-header">
+            <div class="logo">
+                <span class="iconify" data-icon="carbon:plane" data-width="28"></span>
+                <h1>AeroVis</h1>
+            </div>
+            <div class="status-indicator">
+                <div class="pulse"></div>
+                <span>LIVE TRAFFIC</span>
+            </div>
+        </header>
+
+        <section class="stats-panel glass-panel">
+            <div class="stat-item">
+                <span class="label">Airborne</span>
+                <span class="value" id="flight-count">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="label">Updates</span>
+                <span class="value" id="update-rate">Real-time</span>
+            </div>
+            <div class="stat-item">
+                <span class="label">Region</span>
+                <span class="value">Global</span>
+            </div>
+        </section>
+
+        <section class="search-panel">
+            <div class="search-box">
+                <span class="iconify" data-icon="carbon:search"></span>
+                <input type="text" id="flight-search" placeholder="Search Flight ID or City...">
+            </div>
+            <div id="search-results" class="search-results"></div>
+        </section>
+
+        <section class="controls-panel glass-panel">
+            <button id="btn-rotate" class="icon-btn active" title="Auto Rotate">
+                <span class="iconify" data-icon="carbon:rotate-360"></span>
+            </button>
+            <button id="btn-view-2d" class="icon-btn" title="Toggle Projection">
+                <span class="iconify" data-icon="carbon:map"></span>
+            </button>
+            <button id="btn-theme" class="icon-btn" title="Toggle Theme">
+                <span class="iconify" data-icon="carbon:moon"></span>
+            </button>
+        </section>
+
+        <div class="tooltip" id="tooltip"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

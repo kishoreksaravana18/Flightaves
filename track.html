@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Tracker Dashboard - AeroVis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="track-style.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <a href="index.html" class="back-btn">
+                    <span class="iconify" data-icon="carbon:arrow-left"></span>
+                    Back to Globe
+                </a>
+                <h1 id="route-title">Loading...</h1>
+                <div class="tracking-badge">
+                    <span class="iconify" data-icon="carbon:notification"></span>
+                    Tracking Active
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Overview Cards -->
+            <section class="overview-grid">
+                <div class="stat-card">
+                    <span class="iconify stat-icon" data-icon="carbon:plane"></span>
+                    <div class="stat-content">
+                        <span class="stat-label">Active Flights</span>
+                        <span class="stat-value" id="active-flights">--</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <span class="iconify stat-icon" data-icon="carbon:currency-dollar"></span>
+                    <div class="stat-content">
+                        <span class="stat-label">Current Best Price</span>
+                        <span class="stat-value" id="best-price">$--</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <span class="iconify stat-icon" data-icon="carbon:chart-line"></span>
+                    <div class="stat-content">
+                        <span class="stat-label">30-Day Average</span>
+                        <span class="stat-value" id="avg-price">$--</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <span class="iconify stat-icon" data-icon="carbon:trending-down"></span>
+                    <div class="stat-content">
+                        <span class="stat-label">Price Trend</span>
+                        <span class="stat-value trend" id="trend">--</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Price by Date Calendar -->
+            <section class="calendar-section glass-panel">
+                <h2>Price Calendar - Next 30 Days</h2>
+                <div id="price-calendar" class="price-calendar"></div>
+            </section>
+
+            <!-- Top 5 Cheapest Flights -->
+            <section class="cheapest-section glass-panel">
+                <h2>Top 5 Cheapest Upcoming Flights</h2>
+                <div id="cheapest-list" class="cheapest-list"></div>
+            </section>
+
+            <!-- Historical Chart -->
+            <section class="chart-section glass-panel">
+                <h2>90-Day Price History</h2>
+                <div id="history-chart" class="history-chart"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="track.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,316 @@
+:root {
+    --bg-color: #000011;
+    --glass-bg: rgba(10, 15, 30, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --primary: #00f3ff;
+    --secondary: #7000ff;
+    --text-main: #ffffff;
+    --text-muted: #a0a0b0;
+    --font-family: 'Outfit', sans-serif;
+    --success: #00ff88;
+    --warning: #ffd700;
+    --danger: #ff3366;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background: linear-gradient(135deg, #000011 0%, #001133 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header */
+.dashboard-header {
+    margin-bottom: 2rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.back-btn:hover {
+    background: rgba(0, 243, 255, 0.1);
+    border-color: var(--primary);
+}
+
+.dashboard-header h1 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tracking-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid var(--success);
+    border-radius: 20px;
+    color: var(--success);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Overview Grid */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s;
+}
+
+.stat-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 32px rgba(0, 243, 255, 0.2);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.stat-value.trend {
+    font-size: 1.2rem;
+}
+
+/* Glass Panel */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.glass-panel h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+/* Price Calendar */
+.price-calendar {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.calendar-day {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.calendar-day:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.calendar-day.best-deal {
+    border-color: var(--success);
+    background: rgba(0, 255, 136, 0.1);
+}
+
+.calendar-day.expensive {
+    border-color: var(--danger);
+    background: rgba(255, 51, 102, 0.1);
+}
+
+.day-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.day-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.day-label {
+    font-size: 0.7rem;
+    margin-top: 0.3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Cheapest List */
+.cheapest-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.flight-item {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.2rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 1.5rem;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.flight-item:hover {
+    border-color: var(--primary);
+    background: rgba(0, 243, 255, 0.05);
+}
+
+.flight-rank {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    width: 40px;
+    text-align: center;
+}
+
+.flight-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.flight-time {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.flight-id {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.flight-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--success);
+}
+
+.flight-action {
+    padding: 0.6rem 1.2rem;
+    background: var(--primary);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.flight-action:hover {
+    background: #00d4e6;
+    transform: scale(1.05);
+}
+
+/* History Chart */
+.history-chart {
+    width: 100%;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 1rem;
+    position: relative;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 1rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboard-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .price-calendar {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    }
+
+    .flight-item {
+        grid-template-columns: auto 1fr;
+        gap: 1rem;
+    }
+
+    .flight-price {
+        grid-column: 2;
+    }
+
+    .flight-action {
+        grid-column: 1 / -1;
+    }
+}
